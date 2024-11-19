@@ -2,6 +2,7 @@ a {
   color: var(--text-light);
   text-decoration: none;
 }
+
 .outer__card {
   margin: 0 auto;
 }

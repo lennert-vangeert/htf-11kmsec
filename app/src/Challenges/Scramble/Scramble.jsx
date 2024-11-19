@@ -82,15 +82,14 @@ const Scramble = () => {
     if (attempts < 3) {
       if (guess.toLowerCase() === currentWord.toLowerCase()) {
         const points = 3 - attempts;
-        setScore((prevScore) => prevScore + points);
-        alert(`Correct! You scored ${points} points.`);
-        setScoreBoard();
         startNewRound();
+        setScore((prevScore) => prevScore + points);
+        setScoreBoard();
       } else {
         setAttempts(attempts + 1);
         if (attempts === 2) {
-          alert(`Out of attempts! The word was: ${currentWord}`);
           startNewRound();
+          setScore(0);
         }
       }
     }
@@ -101,7 +100,7 @@ const Scramble = () => {
   }, []);
 
   return (
-    <div>
+    <div className={style.main}>
       <h1 className={style.white}>Scrambled in Space</h1>
       <p className={style.white}>Guess the space-themed word!</p>
       <p className={style.white}>Scrambled Word: {scrambledWord}</p>
