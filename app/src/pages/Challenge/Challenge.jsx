@@ -3,6 +3,8 @@ import style from "./ProductDetail.module.css";
 import { useChallenges } from "../../contexts/ChallengeProvider";
 import { useNavigate, useParams } from "react-router-dom";
 import NotFound from "../../components/NotFound/NotFound";
+import SpaceInvaders from "../../Challenges/SpaceInvaders/SpaceInvaders";
+import Tetris from "../../Challenges/Tetris/Tetris";
 import ReactionSpeedChallenge from "../../Challenges/ReactionSpeedChallenge/ReactionSpeedChallenge";
 
 const Challenge = () => {
@@ -10,7 +12,6 @@ const Challenge = () => {
   const { challengeData, isLoading } = useChallenges();
   const [challenge, setChallenge] = useState(null);
   const navigate = useNavigate();
-
 
   useEffect(() => {
     const filteredChallenges = challengeData.filter(
@@ -28,7 +29,12 @@ const Challenge = () => {
   else
     return (
       <div>
-        <ReactionSpeedChallenge />
+        {/* if challenge.name is spaceInvaders render SpaceInvaders */}
+        {challenge.name === "Space Invaders" ? <SpaceInvaders /> : null}
+        {challenge.name === "Tetris" ? <Tetris /> : null}
+        {challenge.name === "Asteroid destroyer" ? (
+          <ReactionSpeedChallenge />
+        ) : null}
       </div>
     );
 };
