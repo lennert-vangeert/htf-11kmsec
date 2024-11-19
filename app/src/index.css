@@ -55,3 +55,44 @@ body {
     --main-padding: 0 2rem;
   }
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--text-light);
+}
+
+h1 {
+  font-size: 2.5rem; /* Main page heading */
+  line-height: 1.2; /* Slightly tighter line spacing */
+}
+
+h2 {
+  font-size: 2rem; /* Section headings */
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.75rem; /* Sub-section headings */
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 1.5rem; /* Smaller sub-headings */
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: 1.25rem; /* Smallest heading */
+  line-height: 1.5;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1rem; /* Standard body text size */
+  line-height: 1.6; /* Readable line spacing */
+  margin: 0 0 1rem; /* Space below each paragraph */
+  color: var(--text-light); /* Slightly lighter text color */
+}

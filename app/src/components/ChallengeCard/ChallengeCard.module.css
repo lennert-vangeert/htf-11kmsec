@@ -1,5 +1,5 @@
 a {
-  color: var(--black);
+  color: var(--text-light);
   text-decoration: none;
 }
 .outer__card {

@@ -3,7 +3,6 @@ import style from "./ChallengeCard.module.css";
 import { Link } from "react-router-dom";
 import ROUTES from "../../consts/ROUTES";
 
-
 // {
 // 	"_id": "673c5c097973c0a6295d5077",
 // 	"name": "Asteroid destroyer",
@@ -23,14 +22,17 @@ import ROUTES from "../../consts/ROUTES";
 // 	"path": "src/Challenges/ReactionSpeedChallenge/ReactionSpeedChallenge.tsx"
 // }
 
-
-
 const ChallengeCard = ({ challenge }) => {
   return (
     <div className={style.outer__card}>
       <div className={style.card}>
         <Link to={`${ROUTES.challenge.to}${challenge._id}`}>
-          <h1>{challenge.name}</h1>
+          <img src={challenge.image} alt={challenge.name} />
+          <div>
+            <h1>{challenge.name}</h1>
+            <h3>{challenge.description}</h3>
+            <p>{challenge.category}</p>
+          </div>
         </Link>
       </div>
     </div>

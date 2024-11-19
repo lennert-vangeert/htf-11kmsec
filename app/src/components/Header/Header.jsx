@@ -119,7 +119,7 @@ const Header = () => {
           />
         </Link>
         <div className={style.main__header_links}>
-          <Link to={ROUTES.scoreboard}>scoreboard</Link>
+          <Link to={ROUTES.scoreboard}>Scoreboard</Link>
         </div>
       </div>
     </header>

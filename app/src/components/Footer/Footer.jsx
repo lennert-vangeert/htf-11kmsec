@@ -21,8 +21,8 @@ const Footer = () => {
         </div>
         <div className={style.footer__links}>
           {/* TODO -- make conditional rendering for dashboard and account links*/}
-          <Link to={ROUTES.productList}>Klimschoenen</Link>
-          <Link to={ROUTES.basket}>Winkelmand</Link>
+          <Link to={ROUTES.scoreboard}>Scoreboard</Link>
+          <Link to={ROUTES.productList}>Home</Link>
           <Link to={ROUTES.account}>Account</Link>
           {user ? (
             user.role === "admin" || "" ? (
