@@ -15,8 +15,8 @@
 
 .secondary__footer {
   height: 5vh;
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--footer-bg);
+  color: var(--text-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,12 +32,12 @@
   gap: 16px;
   text-decoration: none;
   font-size: 1.2rem;
-  color: var(--black);
+  color: var(--text-light);
 }
 
 .footer__links a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--text-light);
   cursor: pointer;
 }
 

@@ -13,7 +13,7 @@
   gap: calc(1vw + 1vh);
   padding: var(--main-padding);
   font-weight: 700;
-  color: var(--white);
+  color: var(--text-light);
 }
 
 .secondary__header a {
@@ -23,7 +23,7 @@
 }
 .secondary__header p {
   text-decoration: none;
-  color: var(--white);
+  color: var(--text-light);
   cursor: pointer;
 }
 
