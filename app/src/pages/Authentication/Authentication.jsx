@@ -8,12 +8,14 @@ import NotFound from "../../components/NotFound/NotFound";
 import { useAuthContext } from "../../contexts/AuthContainer";
 import Challenge from "../Challenge/Challenge";
 import ChallengeList from "../ProductList/ChallengeList";
+import ScoreBoard from "../ScoreBoard/Scoreboard";
 
 const Authentication = () => {
   const { user, login } = useAuthContext();
   return (
     <Routes>
       <Route path={ROUTES.home} element={<ChallengeList />} />
+      <Route path={ROUTES.scoreboard} element={<ScoreBoard />} />
 
       <Route path={ROUTES.challenge.path} element={<Challenge />} />
 

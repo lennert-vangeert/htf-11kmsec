@@ -23,8 +23,8 @@ const createChallenge = async (
 ) => {
   try {
     const { user } = req as AuthRequest;
-    const product = new Challenge({ ...req.body, userId: user._id });
-    const result = await product.save();
+    const challenge = new Challenge({ ...req.body, userId: user._id });
+    const result = await challenge.save();
     res.status(200).json(result);
   } catch {
     res.status(500).json({ message: "internal server error" });
@@ -38,13 +38,13 @@ const getChallengeById = async (
 ) => {
   try {
     const { id } = req.params;
-    const trip = await Challenge.findOne({
+    const challenge = await Challenge.findOne({
       _id: id,
     });
-    if (!trip) {
+    if (!challenge) {
       throw new notFoundError("Product not found");
     }
-    res.json(trip);
+    res.json(challenge);
   } catch (err) {
     next(err);
   }
