@@ -45,10 +45,10 @@
   color: white;
 }
 .error {
-  color: var(--white);
+  color: var(--text-light);
   font-weight: 700;
   padding: 0.5rem;
   background-color: hsla(0, 100%, 50%, 0.345);
-  border: 1px solid var(--main-red);
+  border: 1px solid var(--accent);
   text-align: center;
 }

@@ -13,7 +13,7 @@
 
 .modal {
   font-family: var(--secondary-font);
-  background-color: var(--white);
+  background-color: white;
   padding: 25px;
   width: 300px;
   box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.2);
@@ -48,10 +48,10 @@
   width: 100%;
 }
 .error {
-  color: var(--white);
+  color: var(--text-light);
   font-weight: 700;
   padding: 0.5rem;
   background-color: hsla(0, 100%, 50%, 0.345);
-  border: 1px solid var(--main-red);
+  border: 1px solid var(--accent);
   text-align: center;
 }
