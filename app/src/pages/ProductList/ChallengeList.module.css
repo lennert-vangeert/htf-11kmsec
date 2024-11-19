@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  max-width: calc(100% - 200px);
+  width: 100%;
   font-family: var(--primary-font);
   color: var(--text-light);
   background-color: var(--main-body-bg);
@@ -62,10 +62,10 @@
   margin-right: 5px;
 }
 
-.product__container {
+.challenge__container {
   width: 100%;
 }
-.product__grid {
+.challenge__grid {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
