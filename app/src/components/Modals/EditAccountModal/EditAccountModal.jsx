@@ -6,12 +6,6 @@ const EditAccountModal = ({ isOpen, onClose, onEdit, user }) => {
     firstName: "",
     lastName: "",
     email: "",
-    address: {
-      street: "",
-      zip: "",
-      city: "",
-      state: "",
-    },
   });
 
   const [errors, setErrors] = useState({});
@@ -22,12 +16,6 @@ const EditAccountModal = ({ isOpen, onClose, onEdit, user }) => {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-        address: {
-          street: user.address.street,
-          zip: user.address.zip,
-          city: user.address.city,
-          state: user.address.state,
-        },
       });
     }
   }, [isOpen, user]);
@@ -58,10 +46,6 @@ const EditAccountModal = ({ isOpen, onClose, onEdit, user }) => {
     if (!formData.firstName) newErrors.firstName = "Voornaam is verplicht";
     if (!formData.lastName) newErrors.lastName = "Achternaam is verplicht";
     if (!formData.email) newErrors.email = "Email is verplicht";
-    if (!formData.address.street) newErrors.street = "Straat is verplicht";
-    if (!formData.address.zip) newErrors.zip = "Postcode is verplicht";
-    if (!formData.address.city) newErrors.city = "Stad is verplicht";
-    if (!formData.address.state) newErrors.state = "Provincie is verplicht";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -116,58 +100,6 @@ const EditAccountModal = ({ isOpen, onClose, onEdit, user }) => {
             onChange={handleChange}
           />
           {errors.email && <div className={style.error}>{errors.email}</div>}
-        </label>
-
-        <label className={style.form__label} htmlFor="street">
-          Straat
-          <input
-            type="text"
-            name="street"
-            id="street"
-            required
-            value={formData.address.street}
-            onChange={handleChange}
-          />
-          {errors.street && <div className={style.error}>{errors.street}</div>}
-        </label>
-
-        <label className={style.form__label} htmlFor="zip">
-          Postcode
-          <input
-            type="text"
-            name="zip"
-            id="zip"
-            required
-            value={formData.address.zip}
-            onChange={handleChange}
-          />
-          {errors.zip && <div className={style.error}>{errors.zip}</div>}
-        </label>
-
-        <label className={style.form__label} htmlFor="city">
-          Stad
-          <input
-            type="text"
-            name="city"
-            id="city"
-            required
-            value={formData.address.city}
-            onChange={handleChange}
-          />
-          {errors.city && <div className={style.error}>{errors.city}</div>}
-        </label>
-
-        <label className={style.form__label} htmlFor="state">
-          Provincie
-          <input
-            type="text"
-            name="state"
-            id="state"
-            required
-            value={formData.address.state}
-            onChange={handleChange}
-          />
-          {errors.state && <div className={style.error}>{errors.state}</div>}
         </label>
 
         <div className={style.modal__buttons}>

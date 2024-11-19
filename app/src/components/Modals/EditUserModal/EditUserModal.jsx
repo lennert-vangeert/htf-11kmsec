@@ -37,22 +37,6 @@ const EditUserModal = ({ isOpen, onClose, onEdit }) => {
         <h2 className={style.modal__title}>
           Welke functie wilt u de gebruiker geven?
         </h2>
-        <label className={style.form__label} htmlFor="role">
-          <select
-            onChange={handleChange}
-            name="role"
-            id="role"
-            value={formData.role}
-          >
-            <option value="" disabled>
-              -- kies een functie --
-            </option>
-            <option value="admin">Admin</option>
-            <option value="seller">Verkoper</option>
-            <option value="user">Gebruiker</option>
-          </select>
-          {errors.role && <div className={style.error}>{errors.role}</div>}
-        </label>
         <div className={style.modal__buttons}>
           <button
             onClick={onClose}

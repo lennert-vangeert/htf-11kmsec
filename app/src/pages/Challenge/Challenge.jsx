@@ -20,7 +20,7 @@ const Challenge = () => {
 
     if (filteredChallenges.length === 1) {
       const selectedChallenge = filteredChallenges[0];
-      setProduct(selectedChallenge);
+      setChallenge(selectedChallenge);
     }
   }, [challengeData, id]);
 
@@ -29,7 +29,7 @@ const Challenge = () => {
   else
     return (
       <div>
-        <a href=""></a>
+        {challenge.name}
       </div>
     );
 };

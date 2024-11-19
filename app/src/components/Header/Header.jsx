@@ -11,16 +11,6 @@ const Header = () => {
     <header className={style.header}>
       {windowWidth > 768 ? (
         <div className={style.secondary__header}>
-          {user ? (
-            user.role === "user" ? (
-              ""
-            ) : (
-              <Link to={ROUTES.dashboard}>Dashboard</Link>
-            )
-          ) : (
-            ""
-          )}
-          <Link to={ROUTES.basket}>Winkelmand</Link>
           {user ? <Link to={ROUTES.account}>Account</Link> : ""}
           {user ? (
             <p onClick={logout}>Log uit</p>
