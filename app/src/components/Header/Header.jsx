@@ -13,7 +13,7 @@ const Header = () => {
         <div className={style.secondary__header}>
           {user ? <Link to={ROUTES.account}>Account</Link> : ""}
           {user ? (
-            <p onClick={logout}>Log uit</p>
+            <p onClick={logout}>Log out</p>
           ) : (
             <Link to={ROUTES.login}>Log in</Link>
           )}
@@ -104,7 +104,7 @@ const Header = () => {
             </svg>
           </Link>
           {user ? (
-            <p onClick={logout}>Log uit</p>
+            <p onClick={logout}>Log out</p>
           ) : (
             <Link to={ROUTES.login}>Log in</Link>
           )}
@@ -114,12 +114,12 @@ const Header = () => {
         <Link to={ROUTES.home}>
           <img
             className={style.main__header_logo}
-            src="/bergfreunde-logo.svg"
-            alt="bergfreunde logo"
+            src="/images/escape-velocity-logo.png"
+            alt="escape velocity logo"
           />
         </Link>
         <div className={style.main__header_links}>
-          <Link to={ROUTES.productList}>Klimschoenen</Link>
+          <Link to={ROUTES.scoreboard}>scoreboard</Link>
         </div>
       </div>
     </header>

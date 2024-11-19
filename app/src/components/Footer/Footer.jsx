@@ -14,8 +14,8 @@ const Footer = () => {
           <Link to={ROUTES.home}>
             <img
               className={style.main__footer_logo}
-              src="/bergfreunde-logo.svg"
-              alt="bergfreunde logo"
+              src="/images/escape-velocity-logo.png"
+              alt="escape velocity logo"
             />
           </Link>
         </div>

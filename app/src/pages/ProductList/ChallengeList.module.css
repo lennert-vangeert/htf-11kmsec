@@ -2,17 +2,19 @@
   display: flex;
   max-width: calc(100% - 200px);
   font-family: var(--primary-font);
+  color: var(--text-light);
+  background-color: var(--main-body-bg);
 }
 
 .filter__container {
   /* position: absolute; */
   width: 15%;
   padding: 20px;
-  border-right: 2px solid var(--main-red);
+  border-right: 2px solid var(--divider);
   min-height: 100vh;
   min-width: 200px;
   transition: left 0.3s ease-in-out;
-  background-color: var(--white);
+  background-color: var(--sidebar-bg);
   z-index: 15;
 }
 .filter__title {
@@ -86,8 +88,6 @@
   padding: 0 0.5rem;
   min-width: 150px;
 }
-
-
 
 @media screen and (max-width: 768px) {
   .filter__container {

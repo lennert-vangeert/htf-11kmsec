@@ -3,14 +3,31 @@
 
 :root {
   /* colours */
+  --sidebar-bg: #1e1e2c; /* Deep muted indigo */
+  --header-bg: #262641; /* Darker navy */
+  --main-body-bg: #121212; /* Dark gray */
+  --footer-bg: #1a1a27; /* Slightly lighter gray */
 
-  --main-red: #1d2f40;
+  /* Text Colors */
+  --text-light: #e0e0e0; /* Light gray for text */
+  --text-highlight: #ffffff; /* White for headings */
+
+  /* Accent Colors */
+  --accent: #4f8cfd; /* Nebula blue */
+  --accent-hover: #5c9eff; /* Glowing blue for hover effects */
+
+  /* Divider/Border */
+  --divider: #2e2e40; /* Subtle gray for dividers and borders */
+
+  /* --main-red: #1d2f40;
   --dark-grey: #466c8c;
   --light-grey: #64a8c8;
 
-  --black: #000;
-  --white: #fff;
+  --bg-c: #505064;
 
+
+  --black: #000;
+  --white: #fff; */
   /* fonts */
   --primary-font: "Asap", sans-serif;
   --secondary-font: "Asap", sans-serif;
