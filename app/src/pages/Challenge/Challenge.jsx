@@ -3,15 +3,14 @@ import style from "./ProductDetail.module.css";
 import { useChallenges } from "../../contexts/ChallengeProvider";
 import { useNavigate, useParams } from "react-router-dom";
 import NotFound from "../../components/NotFound/NotFound";
+import ReactionSpeedChallenge from "../../Challenges/ReactionSpeedChallenge/ReactionSpeedChallenge";
 
 const Challenge = () => {
   const { id } = useParams();
   const { challengeData, isLoading } = useChallenges();
   const [challenge, setChallenge] = useState(null);
   const navigate = useNavigate();
-  if (challengeData) {
-    console.log(challengeData);
-  }
+
 
   useEffect(() => {
     const filteredChallenges = challengeData.filter(
@@ -29,7 +28,7 @@ const Challenge = () => {
   else
     return (
       <div>
-        {challenge.name}
+        <ReactionSpeedChallenge />
       </div>
     );
 };
