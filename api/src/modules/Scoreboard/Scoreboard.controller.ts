@@ -1,5 +1,4 @@
 import { NextFunction, Request, Response } from "express";
-import Challenge from "./Scoreboard.model";
 import notFoundError from "../../middleware/Error/notFoundError";
 import { AuthRequest } from "../../middleware/Auth/authMiddleware";
 import ScoreBoard from "./Scoreboard.model";

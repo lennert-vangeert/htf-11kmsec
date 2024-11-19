@@ -63,6 +63,14 @@ const CONTROL = {
   Right: 39,
   Rotate: 38,
 };
+const score = 0;
+
+setInterval(() => {
+  if (GAME_STATUS === "RUNING") {
+    score += 1;
+  }
+}, 1000);
+
 function getInitialState() {
   return {
     status: GAME_STATUS.Running,
@@ -220,6 +228,23 @@ export default function Tetris() {
       document.removeEventListener("keydown", handleGameAction);
     };
   });
+  useEffect(() => {
+    if (GAME_STATUS === "GAMEOVER") {
+      // post score to database
+      fetch(`${import.meta.env.VITE_API_URL}/scoreboard`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          userID: user._id,
+          challengeId: "673c8f84205f6e3bcd306637",
+          score: score,
+        }),
+      });
+    }
+  }, [GAME_STATUS]);
 
   function handleGameAction(e) {
     if ([CONTROL.Left, CONTROL.Right, CONTROL.Rotate].includes(e.keyCode)) {
@@ -266,6 +291,7 @@ export default function Tetris() {
         </div>
       )}
       <div className="Game">{out}</div>
+      <div>{score}</div>
     </React.Fragment>
   );
 }

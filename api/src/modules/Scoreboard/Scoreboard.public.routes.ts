@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {
-  getScoreboard,
   getScoreboardByChallengeId,
+  getScoreboard,
 } from "./Scoreboard.controller";
 
 const router = Router();

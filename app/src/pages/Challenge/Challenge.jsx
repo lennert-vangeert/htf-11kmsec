@@ -6,6 +6,7 @@ import NotFound from "../../components/NotFound/NotFound";
 import SpaceInvaders from "../../Challenges/SpaceInvaders/SpaceInvaders";
 import Tetris from "../../Challenges/Tetris/Tetris";
 import ReactionSpeedChallenge from "../../Challenges/ReactionSpeedChallenge/ReactionSpeedChallenge";
+import Scramble from "../../Challenges/Scramble/Scramble";
 
 const Challenge = () => {
   const { id } = useParams();
@@ -35,6 +36,7 @@ const Challenge = () => {
         {challenge.name === "Asteroid destroyer" ? (
           <ReactionSpeedChallenge />
         ) : null}
+        {challenge.name === "Scrambled in space" ? <Scramble /> : null}
       </div>
     );
 };

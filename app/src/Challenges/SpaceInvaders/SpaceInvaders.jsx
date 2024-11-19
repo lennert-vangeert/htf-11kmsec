@@ -12,7 +12,6 @@ const SpaceInvaders = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const { user, setUser } = useAuthContext();
-  console.log(user);
 
   // Move player left or right
   const movePlayer = (direction) => {
@@ -25,19 +24,21 @@ const SpaceInvaders = () => {
 
   useEffect(() => {
     if (gameOver) {
-        // post score to database
-        fetch(`${import.meta.env.VITE_API_URL}/scoreboard`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: "Space Invaders",
-            score: score,
-          }),
-        });
+      // post score to database
+      fetch(`${import.meta.env.VITE_API_URL}/scoreboard`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          userID: user._id,
+          challengeId: "673c9108205f6e3bcd30664f",
+          score: score,
+        }),
+      });
     }
-    }, [gameOver]);
+  }, [gameOver]);
 
   // Shoot a bullet
   const shoot = () => {

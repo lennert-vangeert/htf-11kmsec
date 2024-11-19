@@ -9,8 +9,8 @@ const getChallenges = async (
   next: NextFunction
 ) => {
   try {
-    const products = await Challenge.find().sort({ createdAt: -1 });
-    res.json(products);
+    const challenges = await Challenge.find().sort({ createdAt: -1 });
+    res.json(challenges);
   } catch (err) {
     next(err);
   }
