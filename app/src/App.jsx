@@ -1,12 +1,12 @@
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Authentication from "./pages/Authentication/Authentication";
-import ProductProvider from "./contexts/ProductContext";
+import ChallengeProvider from "./contexts/ChallengeProvider";
 import AuthContainer from "./contexts/AuthContainer";
 function App() {
   return (
     <>
-      <ProductProvider>
+      <ChallengeProvider>
         <AuthContainer>
           <Header />
 
@@ -17,7 +17,7 @@ function App() {
 
           <Footer />
         </AuthContainer>
-      </ProductProvider>
+      </ChallengeProvider>
     </>
   );
 }

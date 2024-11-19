@@ -8,4 +8,5 @@ export type Challenge = Document & {
   difficulty: string;
   category: string;
   tags: string[];
+  path: string;
 };

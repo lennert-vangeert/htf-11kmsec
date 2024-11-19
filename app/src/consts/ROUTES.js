@@ -1,6 +1,6 @@
 const ROUTES = {
   home: "/",
-  challenge: { path: "Challenges/:id", to: "/Challenges/" },
+  challenge: { path: "challenges/:id", to: "/challenges/" },
   account: "/account",
   dashboard: "/dashboard",
   login: "/login",

@@ -3,8 +3,11 @@ import Challenge from "./Challenge.model";
 import notFoundError from "../../middleware/Error/notFoundError";
 import { AuthRequest } from "../../middleware/Auth/authMiddleware";
 
-
-const getChallenges = async (req: Request, res: Response, next: NextFunction) => {
+const getChallenges = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const products = await Challenge.find().sort({ createdAt: -1 });
     res.json(products);
@@ -53,20 +56,18 @@ const updateChallenge = async (
   next: NextFunction
 ) => {
   try {
-    const { user } = req as AuthRequest;
     const { id } = req.params;
-    const updatedChallenge = await Challenge.findOneAndUpdate(
+    const challenge = await Challenge.findOneAndUpdate(
       {
         _id: id,
-        userId: user._id,
       },
       req.body,
       { new: true, runValidators: true }
     );
-    if (!Challenge) {
+    if (!challenge) {
       throw new notFoundError("Challenge not found");
     }
-    res.json(updatedChallenge);
+    res.json(challenge);
   } catch (err) {
     next(err);
   }

@@ -3,29 +3,11 @@ import style from "./Account.module.css";
 import { useAuthContext } from "../../contexts/AuthContainer";
 import EditAccountModal from "../../components/Modals/EditAccountModal/EditAccountModal";
 import useMutation from "../../hooks/useMutation";
-import { useProducts } from "../../contexts/ProductContext";
-import ProductCard from "../../components/ProductCard/ProductCard";
 
 const Account = () => {
   const { user, setUser } = useAuthContext();
-  const { productData, isLoading, errors } = useProducts();
-  const [likes, setLikes] = useState([]);
   const editMutation = useMutation();
 
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/likes`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setLikes(data);
-      })
-      .catch((error) => console.error("Error fetching likes:", error));
-  }, []);
 
   const [isEditModalOpen, setEditModalOpen] = useState(false);
   const handleOpenEditModal = () => setEditModalOpen(true);
@@ -108,57 +90,6 @@ const Account = () => {
           <p className={style.info__text}>
             <span className={style.info__label}>Email:</span> {user.email}
           </p>
-          <p className={style.info__label}>Adres:</p>
-          <p className={style.info__text}>
-            <span className={style.info__label_small}>Straat: </span>
-            {user.address.street}
-          </p>
-          <p className={style.info__text}>
-            <span className={style.info__label_small}>Stad: </span>
-            {user.address.city}
-          </p>
-          <p className={style.info__text}>
-            <span className={style.info__label_small}>Postcode: </span>
-            {user.address.zip}
-          </p>
-          <p className={style.info__text}>
-            <span className={style.info__label_small}>Provincie: </span>
-            {user.address.state}
-          </p>
-
-          {user.role === "admin" || user.role === "seller" ? (
-            <p className={style.info__text}>
-              <span className={style.info__label}>Functie:</span>{" "}
-              {user.role === "admin" ? "Admin" : "Verkoper"}
-            </p>
-          ) : null}
-        </div>
-      </section>
-
-      <section className={`${style.section} ${style.like}`}>
-        <h1 className={style.section__title}>Favorieten</h1>
-        <div className={style.grid}>
-
-          {likes && productData ? (
-            likes.map((like, index) => {
-              const product = productData.find(
-                (product) => product._id === like.productId
-              );
-              return (
-                <ProductCard
-                  key={product._id}
-                  likeId={like._id}
-                  product={product}
-                  settings={{
-                    deleteButton: true,
-                    deleteLike: true,
-                  }}
-                />
-              );
-            })
-          ) : (
-            <p>Je hebt nog geen favorieten toegevoegd.</p>
-          )}
         </div>
       </section>
     </div>

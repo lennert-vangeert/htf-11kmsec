@@ -31,6 +31,10 @@ const challengeSchema = new mongoose.Schema<Challenge>(
       enum: ["running", "reaction time", "language", "trivia", "math", "coordination", "tactics", "strategy", "memory", "focus", "attention", "problem solving", "creativity", "critical thinking", "spatial awareness", "pattern recognition", "observation", "deduction", "reasoning", "logic", "analysis", "decision making"],
       required: true,
     },
+    path: {
+      type: String,
+      required: true,
+    }
     
   },
   {
